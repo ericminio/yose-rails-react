@@ -1,10 +1,18 @@
 version: '3.4'
 
 services:
+
+  yosethegame:
+    image: ericminio/yoseserver
+    container_name: yosethegame
+    ports: 
+      - "5000:5000"
   
   ruby:
     build: .
     image: ruby:ready
     container_name: ruby
+    ports: 
+      - "5001:5001"
     volumes:
       - .:/usr/local/src
