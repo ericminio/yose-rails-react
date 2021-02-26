@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'net/http'
 require 'json'
-require_relative './lib/Server'
+require_relative './lib/server'
 
 class PingTest < Minitest::Test
 
