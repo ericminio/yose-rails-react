@@ -3,9 +3,11 @@ require 'socket'
 class Server
     
     def initialize(port)
+        @port = port
         @server = TCPServer.new port
     end
     def start
+        puts 'Server listening on port ' + @port.to_s + '...'
         Socket.accept_loop(@server) do |session|
             body = "{\"alive\":true}"
             
