@@ -1,21 +1,20 @@
-class Server
-    require 'socket'
+require 'socket'
 
+class Server
+    
     def initialize(port)
         @server = TCPServer.new port
     end
     def start
-        Thread.new {
-            session = @server.accept
+        Socket.accept_loop(@server) do |session|
+            body = "{\"alive\":true}"
+            
             session.print "HTTP/1.1 200\r\n"
             session.print "Content-Type: application/json\r\n"
+            session.print "Content-Length: " + body.length.to_s + "\r\n"
             session.print "\r\n"
-            session.print "{\"alive\":true}"
+            session.print body
             session.close
-            sleep 3
-        }
-    end
-    def stop
-        @server.shutdown
+        end
     end
 end
