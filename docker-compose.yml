@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  
+  ruby:
+    build: .
+    image: ruby:ready
+    container_name: ruby
+    volumes:
+      - .:/usr/local/src
