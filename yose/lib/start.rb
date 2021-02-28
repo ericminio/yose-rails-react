@@ -1,4 +1,4 @@
 require_relative './server'
 
-yose = Server.new 5001
+yose = Server.new ENV["PORT"] || 5001
 yose.start
