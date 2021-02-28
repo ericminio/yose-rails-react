@@ -14,11 +14,11 @@ class Server
             request = session.gets
             puts request
             
-            session.print "HTTP/1.1 200\r\n"
-            session.print "Content-Type: application/json\r\n"
-            session.print "Content-Length: " + body.length.to_s + "\r\n"
-            session.print "\r\n"
-            session.print body
+            # session.print "HTTP/1.1 200\r\n"
+            # session.print "Content-Type: application/json\r\n"
+            # session.print "Content-Length: " + body.length.to_s + "\r\n"
+            # session.print "\r\n"
+            # session.print body
             session.close
         end
     end
