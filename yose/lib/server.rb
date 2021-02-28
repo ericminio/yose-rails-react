@@ -14,7 +14,7 @@ class Server
             request = session.gets
             puts request
 
-            if request.start_with?('GET /')            
+            unless request.nil?
                 session.print "HTTP/1.1 200\r\n"
                 session.print "Content-Type: application/json\r\n"
                 session.print "Content-Length: " + body.length.to_s + "\r\n"
