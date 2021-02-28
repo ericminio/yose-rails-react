@@ -1,4 +1,4 @@
-[![Build Status](https://www.travis-ci.com/ericminio/yose-rails-react.svg?branch=main)](https://www.travis-ci.com/ericminio/yose-rails-react)
+[![Build Status](https://www.travis-ci.com/ericminio/yose-rails-react.svg?branch=master)](https://www.travis-ci.com/ericminio/yose-rails-react)
 
 ````
 docker-compose up -d yosethegame
