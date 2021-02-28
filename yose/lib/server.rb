@@ -5,9 +5,10 @@ class Server
     def initialize(port)
         @port = port
         @server = TCPServer.new port
+        puts 'Server created on port ' + @port.to_s
     end
     def start
-        puts 'Server listening on port ' + @port.to_s + '...'
+        puts 'Server is listening...'
         Socket.accept_loop(@server) do |session|
             body = "{\"alive\":true}"
             
