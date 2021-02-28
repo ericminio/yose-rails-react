@@ -13,12 +13,14 @@ class Server
         while session = @server.accept
             request = session.gets
             puts request
-            
-            # session.print "HTTP/1.1 200\r\n"
-            # session.print "Content-Type: application/json\r\n"
-            # session.print "Content-Length: " + body.length.to_s + "\r\n"
-            # session.print "\r\n"
-            # session.print body
+
+            if request.start_with?('GET /')            
+                session.print "HTTP/1.1 200\r\n"
+                session.print "Content-Type: application/json\r\n"
+                session.print "Content-Length: " + body.length.to_s + "\r\n"
+                session.print "\r\n"
+                session.print body
+            end
             session.close
         end
     end
