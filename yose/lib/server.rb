@@ -9,8 +9,10 @@ class Server
     end
     def start
         puts 'Server is listening...'
-        Socket.accept_loop(@server) do |session|
-            body = "{\"alive\":true}"
+        body = "{\"alive\":true}"            
+        while session = @server.accept
+            request = session.gets
+            puts request
             
             session.print "HTTP/1.1 200\r\n"
             session.print "Content-Type: application/json\r\n"
